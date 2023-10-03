@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FABRISTA COFFEE</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="right-line">
+                <p>Инвестиции</p>
+            </div>
+            <form id="budgetForm">
+                <div class="placement-section input">
+                    <input type="range" id="investment" min="100" max="15000000" step="100" value="100"
+                        class="line-input">
+                    <div class="min-max">
+                        <output id="investmentValue">100 ₽</output>
+                        <output id="maxInvestmentValue">15 000 000 ₽</output>
+                    </div>
+                </div>
+            </form>
+
+            <div class="right-line">
+                <p>Стоимость аренды</p>
+            </div>
+            <form id="budgetForm">
+                <div class="placement-section input">
+                    <input type="range" id="rent" min="100" max="1000000" step="100" value="100" class="line-input">
+                    <div class="min-max">
+                        <output id="rentValue">100 ₽</output>
+                        <output id="maxRentValue">1 000 000 ₽</output>
+                    </div>
+                </div>
+            </form>
+
+            <div class="right-line">
+                <p>Рассчет</p>
+            </div>
+            <form id="budgetFormCoffe">
+                <div class="placement-section">
+                    <div class="border">
+                        <label for="city">В каком городе хотите открыть кофейню?:</label>
+                        <select id="city">
+                            <option value="1.124938776">Анапа</option>
+                            <option value="0.8828979592">Брест</option>
+                            <option value="0.9788571429">Волгоград</option>
+                            <option value="1.239591837">Геленжик</option>
+                            <option value="1.113673469">ЕКБ</option>
+                            <option value="1.023306122">Казань</option>
+                            <option value="0.9598367347">Камчатка</option>
+                            <option value="1.010571429">Краснодар</option>
+                            <option value="0.829877551">Минск</option>
+                            <option value="1">Махачкала</option>
+                            <option value="0.9722040816">Москва</option>
+                            <option value="1.089020408">Мурманск</option>
+                            <option value="1.001346939">Нарофоминск</option>
+                            <option value="0.9221632653">НН</option>
+                            <option value="0.9720816327">Новороссийск</option>
+                            <option value="0.6913877551">Обнинск</option>
+                            <option value="0.9063673469">Пермь</option>
+                            <option value="1.054204082">Ростов</option>
+                            <option value="1.196857143">Самара</option>
+                            <option value="1.103102041">Сочи</option>
+                            <option value="1.078244898">СПБ</option>
+                            <option value="1.001346939">Тюмень</option>
+                            <option value="0.877755102">Ярославль</option>
+                            <option value="1">Другой город</option>
+                        </select>
+
+                    </div>
+                    <div class="border">
+                        <label for="location">В каком месте хотите открыть кофейню?</label>
+                        <select id="location">
+                            <option value="4053.888288">Бизнес центр</option>
+                            <option value="2975.330854">Креативное пространство</option>
+                            <option value="5206.828994">Курорт</option>
+                            <option value="3719.163567">Метро</option>
+                            <option value="2975.330854">Спальный район</option>
+                            <option value="3235.672303">Торговый центр</option>
+                            <option value="3570.397024">Улица в центре</option>
+                            <option value="3644.780296">Другое</option>
+                        </select>
+                    </div>
+                    <div class="border">
+                        <label for="format">В каком формате хотите открыть кофейню?:</label>
+                        <select id="format">
+                            <option value="350">XS</option>
+                            <option value="400">S</option>
+                            <option value="450">M</option>
+                            <option value="500">L</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+
+            <div class="right-line budget border">
+
+                <p class="budget-title">Бюджет</p>
+            </div>
+            <div id="result" class="hidden">
+                <div class="cost-content">
+                    <p class="cost-title">Выручка: </p>
+                    <span class="right-cost" id="revenue"></span>
+                </div>
+                <div class="cost-content">
+                    <p class="cost-title">Маржа в процентах: </p>
+                    <span class="right-cost" id="margin"></span>
+                </div>
+                <div class="cost-content">
+                    <p class="cost-title">Расходы: </p>
+                    <span class="right-cost" id="expenses"></span>
+                </div>
+                <div class="cost-content">
+                    <p class="cost-title">Прибыль: </p>
+                    <span class="right-cost" id="profit"></span>
+                </div>
+                <div class="cost-content">
+                    <p class="cost-title">Рентабельность: </p>
+                    <span class="right-cost" id="profitability"></span>
+
+                </div>
+                <div class="cost-content">
+                    <p class="cost-title">Окупаемость (месяцы): </p>
+                    <span class="right-cost" id="paybackMonths"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src='script.js'></script>
+</body>
+</html>
