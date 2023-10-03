@@ -1,42 +1,283 @@
-    body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        background: #eeeeee;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: #eeeeee;
+}
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin-top: 90px;
+}
+
+.cost-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.budget-title {
+    font-weight: bold;
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+}
+
+.left-section {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#budgetForm {
+    border-bottom: 1px solid #DB3620;
+    border-right: 1px solid #DB3620;
+}
+
+.input {
+    margin-top: 74px;
+    width: 430px;
+    margin-left: 77px;
+}
+
+.right-line {
+    border-bottom: 1px solid #DB3620;
+    border-right: 1px solid #DB3620;
+    font-size: 30px;
+    padding-left: 36px;
+    padding-top: 60px;
+}
+
+.left-section p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-size: 18px;
+    font-family: 'FuturaPT', Arial, sans-serif;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.right-section__input,
+.right-section__select,
+.input-range {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Стилизация select */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f5f5f5;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+select:hover,
+select:focus {
+    border-color: #aaa;
+}
+
+label {
+    font-size: 20px;
+}
+
+select:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+select:after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+select:hover:after,
+select:focus:after {
+    color: #888;
+}
+
+input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #DB3620;
+    ;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.placement-section {
+    display: flex;
+    flex-direction: column;
+}
+
+#budgetFormCoffe {
+    border-right: 1px solid #DB3620;
+}
+
+.border {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #DB3620 !important;
+    padding: 33px 29px 31px 77px;
+}
+
+.border:not(:last-child) {
+    border-bottom: 0;
+}
+
+.cost-title {
+    font-weight: bolder;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.cost-content span {
+    padding-right: 50px;
+}
+
+#result {
+    font-size: 20px;
+    margin-left: 60px;
+    border-right: 1px solid #DB3620;
+}
+
+.cost-title span {
+    font-weight: normal;
+}
+
+.budget {
+    border-right: 1px solid #DB3620;
+    font-size: 30px;
+}
+
+.min-max {
+    display: flex;
+    justify-content: space-between;
+}
+
+select {
+    border-bottom: 2px solid #DB3620 !important;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+
+.line-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 6px;
+    background: #ccc;
+}
+
+.line-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #f50;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.line-input::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #f50;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.line-input::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(255, 85, 0, .1)
+}
+
+.line-input:active::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
+}
+
+.line-input:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
+}
+
+.line-input::-moz-range-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(255, 85, 0, .1)
+}
+
+.line-input:active::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
+}
+
+.line-input:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
+}
+
+/* Применение медиа-запросов для адаптивности */
+
+@media only screen and (min-width: 600px) {
     .container {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
         margin-top: 90px;
     }
 
-    .cost-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .budget-title {
-        font-weight: bold;
-    }
-
     .section-content {
-        display: flex;
-        align-items: center;
+        justify-content: flex-start;
     }
 
     .left-section {
-        flex: 1;
         padding-right: 20px;
     }
 
     .right-section {
-        flex: 1;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        justify-content: center;
     }
 
     #budgetForm {
@@ -58,314 +299,73 @@
         padding-top: 60px;
     }
 
-    .left-section p {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        color: #000000;
-        font-size: 18px;
-        font-family: 'FuturaPT', Arial, sans-serif;
-        line-height: 1;
-        font-weight: 300;
+    .cost-title span {
+        font-weight: normal;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin-top: 100px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
 
-    .right-section__input,
-    .right-section__select,
-    .input-range {
-        width: 100%;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
-
-    /* Стилизация select */
-    select {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        background-color: #f5f5f5;
-        border: none;
-        outline: none;
-        padding: 10px;
-        font-size: 14px;
-        line-height: 1.5;
-        cursor: pointer;
-        border: 1px solid #ccc;
-        padding-top: 20px;
-    }
-
-    select:hover,
-    select:focus {
-        border-color: #aaa;
-    }
-
-    label {
-        font-size: 20px;
-    }
-
-    select:focus {
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    }
-
-    select:after {
-        content: '\25BC';
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        pointer-events: none;
-    }
-
-    select:hover:after,
-    select:focus:after {
-        color: #888;
-    }
-
-    input[type="range"] {
-        appearance: none;
-        width: 100%;
-        height: 2px;
-        background-color: #ddd;
-        border-radius: 5px;
-        outline: none;
-        margin-bottom: 10px;
-    }
-
-    input[type="range"]::-webkit-slider-thumb {
-        appearance: none;
-        width: 20px;
-        height: 20px;
-        background-color: #DB3620;
-        ;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .placement-section {
+    .cost {
         display: flex;
-        flex-direction: column;
-    }
-
-    #budgetFormCoffe {
-        border-right: 1px solid #DB3620;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .border {
-        display: flex;
-        flex-direction: column;
-        border-bottom: 1px solid #DB3620 !important;
-        padding: 33px 29px 31px 77px;
+        padding: 33px 29px 31px 37px;
     }
 
-    .border:not(:last-child) {
-        border-bottom: 0;
+    .section-content {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .left-section,
+    .right-section {
+        padding: 10px;
+    }
+
+    .input {
+        margin-top: 30px;
+        width: 80%;
+        margin-bottom: 20px;
+        margin-left: 30px;
+    }
+
+    .right-line {
+        border-right: none;
+        font-size: 20px;
+        padding-left: 25px;
+        padding: 10px;
+        border-bottom: 0 !important;
+    }
+
+    #result {
+        font-size: 17px;
+        margin-top: 0;
+        padding-top: 0;
+        margin-left: 10px;
+    }
+
+    #result p {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .cost-title {
         font-weight: bolder;
         margin-bottom: 20px;
         margin-top: 20px;
-        font-size: 22px;
-    }
-
-    .cost-content span {
-        padding-right: 50px;
-    }
-
-    #result {
-        font-size: 20px;
-        margin-left: 60px;
-        border-right: 1px solid #DB3620;
+        font-size: 15px;
     }
 
     .cost-title span {
         font-weight: normal;
     }
-
-    .budget {
-        border-right: 1px solid #DB3620;
-        font-size: 30px;
-    }
-
-    .min-max {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    select {
-        border-bottom: 2px solid #DB3620 !important;
-        border: none;
-        outline: none;
-        background: none;
-        font-size: inherit;
-        cursor: pointer;
-    }
-
-
-    .line-input {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 100%;
-        cursor: pointer;
-        outline: none;
-        border-radius: 15px;
-        height: 6px;
-        background: #ccc;
-    }
-
-    .line-input::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        height: 15px;
-        width: 15px;
-        background-color: #f50;
-        border-radius: 50%;
-        border: none;
-        transition: .2s ease-in-out;
-    }
-
-    .line-input::-moz-range-thumb {
-        height: 15px;
-        width: 15px;
-        background-color: #f50;
-        border-radius: 50%;
-        border: none;
-        transition: .2s ease-in-out;
-    }
-
-    .line-input::-webkit-slider-thumb:hover {
-        box-shadow: 0 0 0 10px rgba(255, 85, 0, .1)
-    }
-
-    .line-input:active::-webkit-slider-thumb {
-        box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
-    }
-
-    .line-input:focus::-webkit-slider-thumb {
-        box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
-    }
-
-    .line-input::-moz-range-thumb:hover {
-        box-shadow: 0 0 0 10px rgba(255, 85, 0, .1)
-    }
-
-    .line-input:active::-moz-range-thumb {
-        box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
-    }
-
-    .line-input:focus::-moz-range-thumb {
-        box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
-    }
-
-    /* Применение медиа-запросов для адаптивности */
-
-    @media only screen and (min-width: 600px) {
-        .container {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            margin-top: 90px;
-        }
-
-        .section-content {
-            justify-content: flex-start;
-        }
-
-        .left-section {
-            padding-right: 20px;
-        }
-
-        .right-section {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-        }
-
-        #budgetForm {
-            border-bottom: 1px solid #DB3620;
-            border-right: 1px solid #DB3620;
-        }
-
-        .input {
-            margin-top: 74px;
-            width: 430px;
-            margin-left: 77px;
-        }
-
-        .right-line {
-            border-bottom: 1px solid #DB3620;
-            border-right: 1px solid #DB3620;
-            font-size: 30px;
-            padding-left: 36px;
-            padding-top: 60px;
-        }
-
-        .cost-title span {
-            font-weight: normal;
-        }
-    }
-
-    @media only screen and (max-width: 600px) {
-        .container {
-            margin-top: 100px;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-        }
-
-        .cost {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .border {
-            padding: 33px 29px 31px 37px;
-        }
-
-        .section-content {
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .left-section,
-        .right-section {
-            padding: 10px;
-        }
-
-        .input {
-            margin-top: 30px;
-            width: 80%;
-            margin-bottom: 20px;
-            margin-left: 30px;
-        }
-
-        .right-line {
-            border-right: none;
-            font-size: 20px;
-            padding-left: 25px;
-            padding: 10px;
-            border-bottom: 0 !important;
-        }
-
-        #result {
-            font-size: 17px;
-            margin-top: 0;
-            padding-top: 0;
-            margin-left: 10px;
-        }
-
-        #result p {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .cost-title {
-            font-weight: bolder;
-            margin-bottom: 20px;
-            margin-top: 20px;
-            font-size: 15px;
-        }
-
-        .cost-title span {
-            font-weight: normal;
-        }
-    }
+}
